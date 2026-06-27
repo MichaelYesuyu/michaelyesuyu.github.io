@@ -1,597 +1,578 @@
 <!DOCTYPE html>
-<html lang="en"><!--
- __  __                __                                     __
-/\ \/\ \              /\ \             __                    /\ \
-\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
- \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
-  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
-   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
-    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
-                /\___/                \ \____/
-                \/__/                  \/___/
-
-Powered by Hydejack v9.2.1 <https://hydejack.com/>
--->
-
-
-
-
-
-
-
+<html lang="en" data-theme="light">
 <head>
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Suyu (Michael) Ye — Embodied AI &amp; Robot Learning</title>
+  <meta name="description" content="Suyu (Michael) Ye is an incoming Computer Science Ph.D. student at Johns Hopkins University working on embodied AI and robot learning." />
+  <meta name="author" content="Suyu (Michael) Ye" />
+  <meta name="keywords" content="Suyu Ye, Michael Ye, Embodied AI, Human-Robot Interaction, Robot Learning, Multimodal, Theory of Mind, Johns Hopkins" />
+  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Suyu (Michael) Ye — Embodied AI &amp; Robot Learning" />
+  <meta property="og:description" content="Incoming CS Ph.D. at Johns Hopkins. Embodied AI &amp; robot learning." />
+  <meta property="og:url" content="https://suyuye.com/" />
+  <meta property="og:image" content="https://suyuye.com/assets/img/photo/profile_photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Suyu (Michael) Ye — Embodied AI &amp; Robot Learning" />
+  <meta name="twitter:description" content="Incoming CS Ph.D. at Johns Hopkins. Embodied AI &amp; robot learning." />
+  <meta name="twitter:image" content="https://suyuye.com/assets/img/photo/profile_photo.jpg" />
 
+  <link rel="canonical" href="https://suyuye.com/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg?v=2" />
+  <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.nav__burger{display:none!important}</style></noscript>
 
-  
-    
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 
-<title>Suyu (Michael) Ye | Human Centered AI</title>
-<meta name="description" content="Personal site for Suyu (Michael) Ye.
-">
-<link rel="canonical" href="http://localhost:4000/">
-
-  
-
-  
-    <meta name="keywords" content="Human Computer Interactions,Multi-modal learning,Multi-Agent Systems">
-  
-
-
-
-  <meta name="color-scheme" content="dark light">
-
-
-
-  <meta name="theme-color" content="rgb(25,55,71)">
-
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<meta name="mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Suyu (Michael) Ye">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-<meta name="application-name" content="Suyu (Michael) Ye">
-
-<meta name="generator" content="Hydejack v9.2.1" />
-
-
-<link rel="alternate" href="http://localhost:4000/" hreflang="en">
-
-<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Suyu (Michael) Ye" />
-
-
-<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
-
-<link rel="manifest" href="/assets/site.webmanifest">
-
-
-
-
-
-<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
-
-
-  
-  <link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.css" id="_katexPreload">
-  <noscript><link rel="stylesheet" href="/assets/bower_components/katex/dist/katex.min.css"></noscript>
-
-
-
-
-
-<script>((r,a)=>{function d(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=a.createElement("script"),e=(n.src=e,t&&d(n,"load",t,{once:!0}),a.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=a.createElement("script");function o(){r._loaded=!0,t&&d(n,"load",t,{once:!0});var e=a.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():d(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){d(a.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}})(window,document);
-!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
-!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
-!function(w) {
-  w._baseURL = '/';
-  w._publicPath = '/assets/js/';
-  w._noPushState = false;
-  w._noDrawer = false;
-  w._noNavbar = false;
-  w._noToc = false;
-  w._noSearch = false;
-  w._search = {
-    DATA_URL: '/assets/sitedata.json?no-cache',
-    STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-02-27T14:11:57-05:00',
-  };
-  w._clapButton = true;
-}(window);</script>
-
-
-
-<!--[if gt IE 8]><!---->
-
-  
-
-
-
-
-<link rel="stylesheet" href="/assets/css/hydejack-9.2.1.css" id="_stylePreload">
-<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
-
-
-
-
-  <style id="_pageStyle">
-
-html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.5);--accent-color-highlight: rgba(79, 177, 186, 0.1);--accent-color-darkened: rgb(63.8602040816, 154.5602040816, 162.8897959184);--theme-color: rgb(25,55,71);--dark-mode-body-bg: hsl(200.8695652174, 5.9895833333%, 17.5%);--dark-mode-border-color: hsl(200.8695652174, 5.9895833333%, 22.5%)}
-</style>
-
-
-<!--<![endif]-->
-
-
-<!-- Add HTML tags here to be included in the head. You can delete the below: -->
-<link rel="dns-prefetch" href="https://assets.gumroad.com">
-<script type="module">
-  const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
-
-  let p1, p2, io1, io2, embedCreated, overlayCreated;
-  document.querySelector('hy-push-state').addEventListener('load', () => {
-    io1 ||= new IntersectionObserver(async (entries) => {
-      if (entries.some(x => x.isIntersecting)) {
-        p1 = p1 || loadJS('https://gumroad.com/js/gumroad-embed.js');
-        await p1;
-        !embedCreated && await new Promise(function check1(res) {
-          if (typeof createGumroadEmbed !== 'undefined')  {
-            embedCreated = 1;
-            res(createGumroadEmbed());
-          }
-          else setTimeout(() => check1(res), 200);
-        });
-        await new Promise(function check2(res) {
-          if (typeof GumroadEmbed !== 'undefined') res(GumroadEmbed.reload());
-          else setTimeout(() => check2(res), 200);
-        });
-      }
-    }, { rootMargin: '1440px' });
-
-    io2 ||= new IntersectionObserver(async (entries) => {
-      if (entries.some(x => x.isIntersecting)) {
-        p2 = p2 || loadJS('https://gumroad.com/js/gumroad.js');
-        await p2;
-        !overlayCreated && await new Promise(function check(res) {
-          if (typeof createGumroadOverlay !== 'undefined') {
-            overlayCreated = 1;
-            res(createGumroadOverlay());
-          }
-          else setTimeout(() => check(res), 200);
-        });
-      }
-    }, { rootMargin: '300px' });
-
-    document.querySelectorAll('.gumroad-product-embed').forEach(el => io1.observe(el));
-    document.querySelectorAll('.gumroad-button').forEach(el => io2.observe(el));
-  });
-</script>
-
-
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Suyu (Michael) Ye",
+    "url": "https://suyuye.com/",
+    "image": "https://suyuye.com/assets/img/photo/profile_photo.jpg",
+    "jobTitle": "Incoming Computer Science Ph.D. Student",
+    "affiliation": { "@type": "Organization", "name": "Johns Hopkins University" },
+    "alumniOf": { "@type": "Organization", "name": "Johns Hopkins University" },
+    "knowsAbout": ["Embodied AI", "Human-Robot Interaction", "Robot Learning", "Multimodal Learning"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=WX4K5xQAAAAJ&hl=en",
+      "https://www.linkedin.com/in/suyu-ye/",
+      "https://x.com/suyu_ye"
+    ]
+  }
+  </script>
 </head>
 
-<body class="no-break-layout">
-  
-<script>
-  window._sunrise = 6;
-  window._sunset =  18;
-  ((e,s)=>{var d="light-mode",a="dark-mode",o=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(o=o<=e._sunrise||o>=e._sunset?a:d)==a?d:a,s.body.classList.add(o),s.body.classList.remove(e))})(window,document);
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-</script>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1.5 12h3M19.5 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+      <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 1.5 8.5 12 14l8.5-4.46V15"/><path d="M6 11.2V16c0 1.2 2.7 2.6 6 2.6s6-1.4 6-2.6v-4.8"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8.25h4V24h-4zM8.5 8.25h3.83v2.15h.05c.53-1 1.84-2.15 3.79-2.15 4.05 0 4.8 2.67 4.8 6.14V24h-4v-6.62c0-1.58-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V24h-4z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.34-3.79-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.94.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.7 10.7 0 0 1 5.65 0c2.15-1.45 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.33-2.64 5.28-5.15 5.56.4.35.76 1.04.76 2.1v3.12c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6.5L21 6"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h7M8.5 9h2"/></symbol>      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><path d="M14 2.5V8h5.5"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.25"/><path d="M2.75 12h18.5M12 2.75c2.5 2.5 3.75 5.75 3.75 9.25S14.5 18.75 12 21.25C9.5 18.75 8.25 15.5 8.25 12S9.5 5.25 12 2.75z"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 5.5h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2.5c0 2-1 3.5-3 4.5M20.5 5.5h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2H19c0 2-1 3.5-3 4.5"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5v-2a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></symbol>      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5M5 12l7-7 7 7"/></symbol>      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>    </defs>
+  </svg>
 
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#about">Suyu&nbsp;Ye</a>
 
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#research" class="nav__link">Research</a>
+        <a href="#news" class="nav__link">News</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#beyond" class="nav__link">Beyond</a>
+      </nav>
 
-<hy-push-state
-  id="_pushState"
-  replace-selector="#_main"
-  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
-  script-selector="script"
-  duration="500"
-  hashchange
->
-  
-  
-  <div id="_navbar" class="navbar fixed-top">
-  <div class="content">
-    <span class="sr-only">Jump to:</span>
-    <div class="nav-btn-bar">
-      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
-        <span class="sr-only">Navigation</span>
-        <span class="icon-menu"></span>
-      </a>
-      <div class="nav-span"></div>
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm cv-btn" href="/assets/Suyu_Ye_CV.pdf" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><span>CV</span>
+        </a>
+        <button class="icon-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
     </div>
-  </div>
-</div>
-<hr class="sr-only" hidden />
-
-  <main
-  id="_main"
-  class="content layout-about"
-  role="main"
->
-  <nav id="breadcrumbs" class="screen-only"><ul>
-  
-  
-</ul></nav>
-  <article class="page mb6" role="article">
-  
-
-  <header>
-    <h1 class="page-title">About</h1>
-    
-
-
-
-  
-    <div class="hr pb0"></div>
-  
-
-
   </header>
 
-  <p style="font-size: 1.2rem;">
-Hi! I'm Suyu (Michael) Ye, a Junior at Johns Hopkins University, advised by Professor Tianmin Shu. I'm double majoring in Computer Science and Applied Maths and Statistics, supported by a National Merit Scholarship.<br /><br />
-
-My research focuses on embodied AI and human-robot collaboration. I am interested in building AI systems that can understand human intentions, perceive complex environments, and translate reasoning into real-world action. My work explores how robots can infer human goals from multi-modal interaction, ground natural language instructions into executable plans, and collaborate with people safely and effectively in dynamic environments.
-
-Ultimately, I aim to develop trustworthy robotic systems that naturally collaborate with humans, enabling assistive technologies, safer shared workspaces, and robots that can operate in environments that are difficult or dangerous for people.
-</p>
-<hr />
-
-<h1 id="news">News</h1>
-
-<ul>
-  <li><strong>[Feb 2025]</strong> - <a href="https://scai.cs.jhu.edu/projects/CaPE/">Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation</a> preprint available on arXiv</li>
-  <li><strong>[Nov 2025]</strong> - <a href="https://scai.cs.jhu.edu/projects/RealWebAssist/">RealWebAssist</a> accepted to AAAI 2025 Main Conference</li>
-  <li><strong>[Nov 2025]</strong> - <a href="https://scai.cs.jhu.edu/projects/RealWebAssist/">RealWebAssist</a> accepted to NeurIPS 2025 LAW workshop as a <strong>spotlight</strong> paper</li>
-  <li><strong>[Aug 2025]</strong> - <a href="https://scai.cs.jhu.edu/projects/RealWebAssist/">RealWebAssist</a> preprint available on arXiv</li>
-  <li><strong>[Jan 2025]</strong> – <a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/">MuMA-ToM</a> accepted to AAAI 2025 as an <strong>Oral Presentation</strong></li>
-  <li><strong>[Sept 2024]</strong> – <a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0">Assessing the limitations of relief based algorithms in detecting higher order interactions</a> published on BioData Mining</li>
-  <li><strong>[Oct 2024]</strong> – <a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/">MuMA-ToM</a> accepted to NeurIPS 2024 Video Language Workshop.</li>
-  <li><strong>[Oct 2024]</strong> – <a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/">MuMA-ToM</a> accepted to NeurIPS 2024 Behavioral ML workshop.</li>
-</ul>
-
-<hr />
-
-<h1 id="preprints">Preprints</h1>
-<div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-  <img src="/assets/img/photo/Multiagent_Figures.png" alt="CaPE" width="170" style="border-radius: 8px;" />
-  <div>
-    <h3 style="margin-top: 0;"><a href="https://scai.cs.jhu.edu/projects/CaPE/">Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation</a></h3>
-    Haojun Shi*, <strong>Suyu Ye*</strong>, Katherine M. Guerrerio, Jianzhi Shen, Yifan Yin, Daniel Khashabi, Chien-Ming Huang, Tianmin Shu
-    <em>(*equal contribution)</em><br />
-    <em>Preprint</em><br />
-    <a href="https://arxiv.org/abs/2602.19304v1">Paper</a> | 
-    <a href="https://scai.cs.jhu.edu/projects/CaPE/">Website</a> | 
-    <a href="">Code</a>
-  </div>
-</div>
-
-<h1 id="publications">Publications</h1>
-
-<div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-  <img src="/assets/img/photo/realwebassist.png" alt="RealWebAssist" width="170" style="border-radius: 8px;" />
-  <div>
-    <h3 style="margin-top: 0;"><a href="https://scai.cs.jhu.edu/projects/RealWebAssist/">RealWebAssist: A Benchmark for Long-Horizon Web Assistance with Real-World Users</a></h3>
-    <strong>Suyu Ye*</strong>, Haojun Shi*, Darren Shih, Hyokun Yun, Tanya Roosta, Tianmin Shu  
-    <em>(*equal contribution)</em><br />
-    <em>AAAI 2026</em><br />
-    <a href="https://arxiv.org/abs/2504.10445">Paper</a> | 
-    <a href="https://scai.cs.jhu.edu/projects/RealWebAssist/">Website</a> | 
-    <a href="https://github.com/SCAI-JHU/RealWebAssist">Code</a>
-  </div>
-</div>
-
-<div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-  <img src="/assets/img/photo/social_goal.png" alt="MuMA-ToM" width="170" style="border-radius: 8px;" />
-  <div>
-    <h3 style="margin-top: 0;"><a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/">MuMA-ToM: Multi-modal Multi-Agent Theory of Mind</a></h3>
-    Haojun Shi*, <strong>Suyu Ye*</strong>, Xinyu Fang, Chuanyang Jin, Leyla Isik, Yen-Ling Kuo, Tianmin Shu  
-    <em>(*equal contribution)</em><br />
-    <em>AAAI 2025 <span style="color: red;"><strong>(Oral)</strong></span></em><br />
-    <a href="https://arxiv.org/abs/2408.12574">Paper</a> | 
-    <a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/">Website</a> | 
-    <a href="https://github.com/SCAI-JHU/MuMA-ToM">Code</a>
-  </div>
-</div>
-
-<!-- Publication 2 -->
-<div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-  <img src="/assets/img/photo/relief_feature_selection.png" alt="Relief Paper" width="170" style="border-radius: 8px;" />
-  <div>
-    <h3 style="margin-top: 0;"><a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0">Assessing the limitations of relief-based algorithms in detecting higher-order interactions</a></h3>
-    Philip J. Freda, <strong>Suyu Ye</strong>, Robert Zhang, Jason H. Moore, Ryan J. Urbanowicz<br />
-    <em>BioData Mining</em><br />
-    <a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0">Paper</a>
-  </div>
-</div>
-
-
-</article>
-
-
-  <hr class="dingbat related mb6" />
-
-
-
-
-  
-<footer class="content" role="contentinfo">
-  <hr/>
-  
-    <p><small class="copyright">© 2024. All rights reserved.
-</small></p>
-  
-  <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.2.1</span></small></p>
-  <hr class="sr-only"/>
-</footer>
-
-
-
-</main>
-
-  <hy-drawer
-  id="_drawer"
-  class=""
-  side="left"
-  threshold="10"
-  noscroll
-  
->
-  <header id="_sidebar" class="sidebar" role="banner">
-    
-
-
-
-
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-bg.jpg)"></div>
-
-    <div class="sidebar-sticky">
-  <div class="sidebar-about">
-    
-      <a class="no-hover" href="/" tabindex="-1">
-        <img src="/assets/img/photo/profile_photo.jpg" class="avatar" alt="Suyu (Michael) Ye" width="120" height="120" loading="lazy" />
-      </a>
-    
-    <a class="sidebar-title" href="/"><h2 class="h1">Suyu (Michael) Ye</h2></a>
-    
-    
-      <p class="">
-        Human Centered AI
-
-      </p>
-    
-  </div>
-
-  <nav class="sidebar-nav heading" role="navigation">
-    <span class="sr-only">Navigation:</span>
-<ul>
-  
-    
-      
-      <li>
-        <a
-          id="_drawer--opened"
-          href="/publications/"
-          class="sidebar-nav-item "
-          
-        >
-          Publications
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
-          
-          href="/funfacts/"
-          class="sidebar-nav-item "
-          
-        >
-          Fun Facts
-        </a>
-      </li>
-    
-  
-</ul>
-
-  </nav>
-
-  
-  <div class="sidebar-social">
-    <span class="sr-only">Social:</span>
-<ul>
-  
-    
-      
-
-
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  <li>
-    <a href="https://scholar.google.com/citations?user=WX4K5xQAAAAJ&hl=en" title="Google" class="no-mark-external">
-      <span class="icon-google"></span>
-      <span class="sr-only">Google</span>
-    </a>
-  </li>
-
-
-    
-      
-
-
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  <li>
-    <a href="https://www.linkedin.com/in/suyu-ye/" title="LinkedIn" class="no-mark-external">
-      <span class="icon-linkedin2"></span>
-      <span class="sr-only">LinkedIn</span>
-    </a>
-  </li>
-
-
-    
-  
-</ul>
-
-  </div>
-</div>
-  </header>
-</hy-drawer>
-<hr class="sr-only" hidden />
-
-</hy-push-state>
-
-
-  <!--[if gt IE 10]><!---->
-  <script nomodule>(()=>{var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())})();
-</script>
-  <script src="/assets/js/hydejack-9.2.1.js" type="module"></script>
-  <script src="/assets/js/LEGACY-hydejack-9.2.1.js" nomodule defer></script>
-  
-
-  
-
-<!--<![endif]-->
-  <!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
--->
-<script>
-  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
-    function e(e){
-      (console.error?console.error:console.log).call(console,e)
-    }
-
-    function t(e){
-      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
-    }
-
-    function r(e,t){
-      var r=e.substr(t,2);return parseInt(r,16)
-    }
-
-    function n(e,n){
-      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
-        var l=r(e,a)^c;
-        o+=String.fromCharCode(l)
-      }
-      return t(o)
-    }
-
-    var o="/cdn-cgi/l/email-protection#",
-        c=".__cf_email__",
-        a="data-cfemail",
-        l=document.createElement("div");
-
-    !function(){
-      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
-        try{
-          var c=t[r],a=c.href.indexOf(o);
-          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
-        }catch(t){
-          e(t)
-        }
-    }(),
-    function(){
-      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
-        try{
-          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
-          o.parentNode.replaceChild(i,o)
-        }catch(t){
-          e(t)
-        }
-    }()
-  });
-</script>
-
-
-
-
-
-<div hidden>
-  
-  <h2 class="sr-only">Templates (for web app):</h2>
-
-  <template id="_animation-template">
-  <div class="animation-main fixed-top">
-    <nav id="breadcrumbs" class="screen-only"><ul>
-  
-  
-</ul></nav>
-    <div class="content">
-      <div class="page"></div>
+  <main id="main">
+
+    <!-- ===================== ABOUT / HERO ===================== -->
+    <section id="about" class="section hero">
+      <div class="hero__grid">
+        <div class="hero__text reveal">
+          <h1 class="hero__name">Suyu <span class="hero__alt">(Michael)</span> Ye</h1>
+          <p class="hero__roles">
+            Incoming CS&nbsp;Ph.D. <span class="dot">·</span> Johns&nbsp;Hopkins&nbsp;University
+          </p>
+          <p class="hero__bio">
+            I'm an incoming Computer Science Ph.D. student at
+            <a href="https://www.jhu.edu/" target="_blank" rel="noopener">Johns Hopkins University</a>,
+            co-advised by Professors <a href="https://www.tshu.io/" target="_blank" rel="noopener">Tianmin Shu</a> and <a href="https://homangab.github.io/" target="_blank" rel="noopener">Homanga Bharadwaj</a>.
+            I completed my undergraduate degrees in Computer Science and Applied Mathematics &amp; Statistics at
+            Johns Hopkins as a National Merit Scholar, and I'm currently a Research Intern at the
+            <a href="https://usa.honda-ri.com/" target="_blank" rel="noopener">Honda Research Institute</a>.
+          </p>
+          <p class="hero__bio">
+            My research is in <strong>embodied AI</strong> and <strong>robot learning</strong>.
+          </p>
+        </div>
+
+        <aside class="hero__aside reveal">
+          <div class="portrait">
+            <img src="/assets/img/photo/profile_photo.jpg" alt="Portrait of Suyu (Michael) Ye" width="320" height="320" loading="eager" />
+          </div>
+        </aside>
+      </div>
+
+      <ul class="social reveal" aria-label="Social and contact links">
+        <li>
+          <a class="social__link" href="https://scholar.google.com/citations?user=WX4K5xQAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+            <svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg><span>Scholar</span>
+          </a>
+        </li>
+        <li>
+          <a class="social__link" href="https://www.linkedin.com/in/suyu-ye/" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="icon icon--solid" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span>
+          </a>
+        </li>        <li>
+          <a class="social__link" href="https://x.com/suyu_ye" target="_blank" rel="noopener" title="X">
+            <svg class="icon icon--solid" aria-hidden="true"><use href="#i-x"/></svg><span>X</span>
+          </a>
+        </li>
+        <li>
+          <a class="social__link" href="mailto:sye10@jh.edu" title="Email">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a class="social__link" href="/assets/Suyu_Ye_CV.pdf" target="_blank" rel="noopener" title="Curriculum Vitae">
+            <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><span>CV</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research" class="section">
+      <div class="section__head reveal">
+        <p class="eyebrow">Research</p>
+        <h2 class="section__title">Publications &amp; Preprints</h2>
+        <p class="section__lead">
+          My work spans embodied reasoning, multimodal theory of mind, and benchmarks grounded in real human
+          behavior. <span class="muted">(<span class="star">*</span> denotes equal contribution.)</span>
+        </p>
+      </div>
+
+      <ol class="pubs">
+
+        <!-- Fast Generative DeOcclusion -->
+        <li class="pub card reveal">
+          <img class="pub__thumb" src="/assets/img/photo/deocclusion.png" alt="Figure from Fast Generative DeOcclusion for Vision and Robotics" loading="lazy" />
+          <div class="pub__body">
+            <div class="badges">
+              <span class="badge badge--venue">CVPR Findings 2026</span>
+            </div>
+            <h3 class="pub__title">Fast Generative DeOcclusion for Vision and Robotics</h3>
+            <p class="pub__authors">
+              Jieneng Chen<span class="star">*</span>, Tiezheng Zhang<span class="star">*</span>, Xiwei Xuan, Ju He, Yifan Yin,
+              Haojun Shi, <strong>Suyu Ye</strong>, Xinyi Li, Ruisheng Yuan, Tianmin Shu, Alan Yuille
+            </p>
+            <p class="pub__venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Findings</p>
+            <div class="pub__links">
+              <a class="chip" href="https://openaccess.thecvf.com/content/CVPR2026F/papers/Chen_Fast_Generative_DeOcclusion_for_Visual_Geometry_and_Robotics_CVPRF_2026_paper.pdf" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Paper
+              </a>
+              <button class="chip chip--cite" type="button" data-cite="cite-deocclusion">
+                <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>Cite
+              </button>
+            </div>
+            <script type="application/x-bibtex" id="cite-deocclusion">@inproceedings{chen2026deocclusion,
+  title     = {Fast Generative DeOcclusion for Vision and Robotics},
+  author    = {Chen, Jieneng and Zhang, Tiezheng and Xuan, Xiwei and He, Ju and Yin, Yifan and Shi, Haojun and Ye, Suyu and Li, Xinyi and Yuan, Ruisheng and Shu, Tianmin and Yuille, Alan},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Findings},
+  year      = {2026}
+}</script>
+          </div>
+        </li>
+
+        <!-- 3D-Belief -->
+        <li class="pub card reveal">
+          <img class="pub__thumb" src="/assets/img/photo/3d_belief.png" alt="Figure from 3D-Belief: Embodied Belief Inference via Generative 3D World Modeling" loading="lazy" />
+          <div class="pub__body">
+            <div class="badges">
+              <span class="badge badge--preprint">arXiv 2026</span>
+            </div>
+            <h3 class="pub__title">
+              <a href="https://arxiv.org/abs/2605.11367" target="_blank" rel="noopener">3D-Belief: Embodied Belief Inference via Generative 3D World Modeling</a>
+            </h3>
+            <p class="pub__authors">
+              Yifan Yin<span class="star">*</span>, Zehao Wen<span class="star">*</span>, <strong>Suyu Ye</strong>, Jieneng Chen, Zehan Zheng, Nanru Dai, Haojun Shi,
+              Aydan Huang, Zheyuan Zhang, Alan Yuille, Jianwen Xie, Ayush Tewari, Tianmin Shu
+            </p>
+            <p class="pub__venue">Preprint, 2026</p>
+            <div class="pub__links">
+              <a class="chip" href="https://arxiv.org/abs/2605.11367" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Paper
+              </a>
+              <a class="chip" href="https://3d-belief.github.io/" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Project
+              </a>
+              <button class="chip chip--cite" type="button" data-cite="cite-3dbelief">
+                <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>Cite
+              </button>
+            </div>
+            <script type="application/x-bibtex" id="cite-3dbelief">@article{yin20263dbelief,
+  title   = {3D-Belief: Embodied Belief Inference via Generative 3D World Modeling},
+  author  = {Yin, Yifan and Wen, Zehao and Ye, Suyu and Chen, Jieneng and Zheng, Zehan and Dai, Nanru and Shi, Haojun and Huang, Aydan and Zhang, Zheyuan and Yuille, Alan and Xie, Jianwen and Tewari, Ayush and Shu, Tianmin},
+  journal = {arXiv preprint arXiv:2605.11367},
+  year    = {2026}
+}</script>
+          </div>
+        </li>
+
+        <!-- CaPE -->
+        <li class="pub card reveal">
+          <img class="pub__thumb" src="/assets/img/photo/cape.png" alt="Figure from Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation" loading="lazy" />
+          <div class="pub__body">
+            <div class="badges">
+              <span class="badge badge--preprint">arXiv 2026</span>
+            </div>
+            <h3 class="pub__title">
+              <a href="https://arxiv.org/abs/2602.19304" target="_blank" rel="noopener">Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation</a>
+            </h3>
+            <p class="pub__authors">
+              Haojun Shi<span class="star">*</span>, <strong>Suyu Ye<span class="star">*</span></strong>, Katherine M. Guerrerio,
+              Jianzhi Shen, Yifan Yin, Daniel Khashabi, Chien-Ming Huang, Tianmin Shu
+            </p>
+            <p class="pub__venue">Preprint, 2026</p>
+            <div class="pub__links">
+              <a class="chip" href="https://arxiv.org/abs/2602.19304" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Paper
+              </a>
+              <a class="chip" href="https://scai.cs.jhu.edu/projects/CaPE/" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Project
+              </a>
+              <button class="chip chip--cite" type="button" data-cite="cite-cape">
+                <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>Cite
+              </button>
+            </div>
+            <script type="application/x-bibtex" id="cite-cape">@article{shi2026cape,
+  title   = {Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation},
+  author  = {Shi, Haojun and Ye, Suyu and Guerrerio, Katherine M. and Shen, Jianzhi and Yin, Yifan and Khashabi, Daniel and Huang, Chien-Ming and Shu, Tianmin},
+  journal = {arXiv preprint arXiv:2602.19304},
+  year    = {2026}
+}</script>
+          </div>
+        </li>
+
+        <!-- RealWebAssist -->
+        <li class="pub card reveal">
+          <img class="pub__thumb" src="/assets/img/photo/realwebassist.png" alt="Figure from RealWebAssist benchmark" loading="lazy" />
+          <div class="pub__body">
+            <div class="badges">
+              <span class="badge badge--venue">AAAI 2026</span>
+              <span class="badge badge--soft">NeurIPS&nbsp;2025 LAW · Spotlight</span>
+            </div>
+            <h3 class="pub__title">
+              <a href="https://arxiv.org/abs/2504.10445" target="_blank" rel="noopener">RealWebAssist: A Benchmark for Long-Horizon Web Assistance with Real-World Users</a>
+            </h3>
+            <p class="pub__authors">
+              <strong>Suyu Ye<span class="star">*</span></strong>, Haojun Shi<span class="star">*</span>, Darren Shih,
+              Hyokun Yun, Tanya Roosta, Tianmin Shu
+            </p>
+            <p class="pub__venue">AAAI 2026 · NeurIPS 2025 LAW Workshop (Spotlight)</p>
+            <div class="pub__links">
+              <a class="chip" href="https://arxiv.org/abs/2504.10445" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Paper
+              </a>
+              <a class="chip" href="https://scai.cs.jhu.edu/projects/RealWebAssist/" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Project
+              </a>
+              <a class="chip" href="https://github.com/SCAI-JHU/RealWebAssist" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code
+              </a>
+              <button class="chip chip--cite" type="button" data-cite="cite-rwa">
+                <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>Cite
+              </button>
+            </div>
+            <script type="application/x-bibtex" id="cite-rwa">@inproceedings{ye2026realwebassist,
+  title     = {RealWebAssist: A Benchmark for Long-Horizon Web Assistance with Real-World Users},
+  author    = {Ye, Suyu and Shi, Haojun and Shih, Darren and Yun, Hyokun and Roosta, Tanya and Shu, Tianmin},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2026}
+}</script>
+          </div>
+        </li>
+
+        <!-- MuMA-ToM -->
+        <li class="pub card reveal">
+          <img class="pub__thumb" src="/assets/img/photo/mumatom.png" alt="Figure from MuMA-ToM" loading="lazy" />
+          <div class="pub__body">
+            <div class="badges">
+              <span class="badge badge--venue">AAAI 2025</span>
+              <span class="badge badge--accent">Oral</span>
+            </div>
+            <h3 class="pub__title">
+              <a href="https://arxiv.org/abs/2408.12574" target="_blank" rel="noopener">MuMA-ToM: Multi-modal Multi-Agent Theory of Mind</a>
+            </h3>
+            <p class="pub__authors">
+              Haojun Shi<span class="star">*</span>, <strong>Suyu Ye<span class="star">*</span></strong>, Xinyu Fang,
+              Chuanyang Jin, Leyla Isik, Yen-Ling Kuo, Tianmin Shu
+            </p>
+            <p class="pub__venue">AAAI 2025 (Oral) · NeurIPS 2024 Workshops</p>
+            <div class="pub__links">
+              <a class="chip" href="https://arxiv.org/abs/2408.12574" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Paper
+              </a>
+              <a class="chip" href="https://scai.cs.jhu.edu/projects/MuMA-ToM/" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Project
+              </a>
+              <a class="chip" href="https://github.com/SCAI-JHU/MuMA-ToM" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code
+              </a>
+              <button class="chip chip--cite" type="button" data-cite="cite-muma">
+                <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>Cite
+              </button>
+            </div>
+            <script type="application/x-bibtex" id="cite-muma">@inproceedings{shi2025muma,
+  title     = {MuMA-ToM: Multi-modal Multi-Agent Theory of Mind},
+  author    = {Shi, Haojun and Ye, Suyu and Fang, Xinyu and Jin, Chuanyang and Isik, Leyla and Kuo, Yen-Ling and Shu, Tianmin},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {39},
+  number    = {2},
+  pages     = {1510--1519},
+  year      = {2025}
+}</script>
+          </div>
+        </li>
+
+        <!-- Relief -->
+        <li class="pub card reveal">
+          <img class="pub__thumb" src="/assets/img/photo/relief_feature_selection.png" alt="Figure from relief-based algorithms study" loading="lazy" />
+          <div class="pub__body">
+            <div class="badges">
+              <span class="badge badge--venue">BioData Mining 2024</span>
+            </div>
+            <h3 class="pub__title">
+              <a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0" target="_blank" rel="noopener">Assessing the limitations of relief-based algorithms in detecting higher-order interactions</a>
+            </h3>
+            <p class="pub__authors">
+              Philip J. Freda, <strong>Suyu Ye</strong>, Robert Zhang, Jason H. Moore, Ryan J. Urbanowicz
+            </p>
+            <p class="pub__venue">BioData Mining, 2024</p>
+            <div class="pub__links">
+              <a class="chip" href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Paper
+              </a>
+              <button class="chip chip--cite" type="button" data-cite="cite-relief">
+                <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>Cite
+              </button>
+            </div>
+            <script type="application/x-bibtex" id="cite-relief">@article{freda2024relief,
+  title   = {Assessing the limitations of relief-based algorithms in detecting higher-order interactions},
+  author  = {Freda, Philip J. and Ye, Suyu and Zhang, Robert and Moore, Jason H. and Urbanowicz, Ryan J.},
+  journal = {BioData Mining},
+  volume  = {17},
+  number  = {1},
+  pages   = {37},
+  year    = {2024}
+}</script>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- ===================== NEWS ===================== -->
+    <section id="news" class="section">
+      <div class="section__head reveal">
+        <p class="eyebrow">News</p>
+        <h2 class="section__title">Recent Updates</h2>
+      </div>
+
+      <ul class="news">
+        <li class="news__item reveal">
+          <span class="news__date">Aug 2026</span>
+          <span class="news__body">Starting my Computer Science Ph.D. at <strong>Johns Hopkins University</strong>. <span aria-hidden="true">🎓</span></span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">May 2026</span>
+          <span class="news__body">Joined the <strong>Honda Research Institute</strong> as a Research Intern.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">May 2026</span>
+          <span class="news__body"><a href="https://arxiv.org/abs/2605.11367" target="_blank" rel="noopener">3D-Belief</a> preprint is available on arXiv.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">May 2026</span>
+          <span class="news__body">Received the <strong>Outstanding Senior Award</strong> from Johns Hopkins University.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Mar 2026</span>
+          <span class="news__body"><strong>Fast Generative DeOcclusion for Vision and Robotics</strong> accepted to <strong>CVPR 2026 (Findings)</strong>.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Feb 2026</span>
+          <span class="news__body"><a href="https://scai.cs.jhu.edu/projects/CaPE/" target="_blank" rel="noopener">CaPE</a> (Safe and Interpretable Multimodal Path Planning) preprint is available on arXiv.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Jan 2026</span>
+          <span class="news__body">Received the <strong>CRA Outstanding Undergraduate Researcher Award</strong> (Honorable Mention).</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Nov 2025</span>
+          <span class="news__body"><a href="https://scai.cs.jhu.edu/projects/RealWebAssist/" target="_blank" rel="noopener">RealWebAssist</a> accepted to <strong>AAAI 2026</strong>, and to the <strong>NeurIPS 2025 LAW Workshop as a Spotlight</strong>.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Apr 2025</span>
+          <span class="news__body"><a href="https://arxiv.org/abs/2504.10445" target="_blank" rel="noopener">RealWebAssist</a> preprint is available on arXiv.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Jan 2025</span>
+          <span class="news__body"><a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/" target="_blank" rel="noopener">MuMA-ToM</a> accepted to <strong>AAAI 2025</strong> as an <strong>Oral</strong>.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Oct 2024</span>
+          <span class="news__body"><a href="https://scai.cs.jhu.edu/projects/MuMA-ToM/" target="_blank" rel="noopener">MuMA-ToM</a> accepted to the NeurIPS 2024 Video-Language &amp; Behavioral ML Workshops.</span>
+        </li>
+        <li class="news__item reveal">
+          <span class="news__date">Sep 2024</span>
+          <span class="news__body"><a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0" target="_blank" rel="noopener">Relief-based algorithms</a> study published in BioData Mining.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section">
+      <div class="section__head reveal">
+        <p class="eyebrow">Experience</p>
+        <h2 class="section__title">Education &amp; Roles</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__logo"><img src="/assets/img/logos/jhu_mark.png" alt="Johns Hopkins University" /></span>
+          <div class="timeline__text">
+            <p class="timeline__head"><span class="timeline__org">Johns Hopkins University</span> <span class="timeline__role">· Ph.D. in Computer Science</span></p>
+          </div>
+          <span class="timeline__date">Aug 2026 –</span>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__logo"><img src="/assets/img/logos/hri_mark.png" alt="Honda Research Institute" /></span>
+          <div class="timeline__text">
+            <p class="timeline__head"><span class="timeline__org">Honda Research Institute</span> <span class="timeline__role">· Research Intern</span></p>
+            <p class="timeline__note">Collaborative Multi-Agent Intelligence</p>
+          </div>
+          <span class="timeline__date">May 2026 – Present</span>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__logo"><img src="/assets/img/logos/jhu_mark.png" alt="Johns Hopkins University" /></span>
+          <div class="timeline__text">
+            <p class="timeline__head"><span class="timeline__org">Johns Hopkins University</span> <span class="timeline__role">· B.S. Computer Science &amp; B.S. Applied Mathematics &amp; Statistics</span></p>
+            <p class="timeline__note">Graduated with Honors in both majors · National Merit Scholar</p>
+          </div>
+          <span class="timeline__date">2023 – 2026</span>
+        </li>
+      </ol>
+
+      <div class="awards reveal">
+        <h3 class="awards__title">Awards &amp; Honors</h3>
+        <ul class="awards__list">
+          <li><span class="awards__year">Jan 2026</span><span>CRA Outstanding Undergraduate Researcher Award — Honorable Mention</span></li>
+          <li><span class="awards__year">May 2026</span><span>Outstanding Senior Award, Johns Hopkins University</span></li>
+          <li><span class="awards__year">2023</span><span>National Merit Scholarship</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== BEYOND ===================== -->
+    <section id="beyond" class="section">
+      <div class="section__head reveal">
+        <p class="eyebrow">Beyond Research</p>
+        <h2 class="section__title">A Few Fun Facts</h2>
+      </div>
+
+      <div class="facts">
+        <div class="fact card reveal">
+          <span class="fact__icon" aria-hidden="true">🎻</span>
+          <p>I hold an ARSM performance diploma for cello, and I also play piano and flute. My favorite composers are Chopin and Rachmaninoff.</p>
+        </div>
+        <div class="fact card reveal">
+          <span class="fact__icon" aria-hidden="true">📖</span>
+          <p>I spent two years in the Singapore Armed Forces, where I co-authored a book for National Day.</p>
+        </div>
+        <div class="fact card reveal">
+          <span class="fact__icon" aria-hidden="true">🏸</span>
+          <p>I love staying active, from tennis, badminton, and table tennis to Brazilian jiu-jitsu, golf, running, and figure skating.</p>
+        </div>
+        <div class="fact card reveal">
+          <span class="fact__icon" aria-hidden="true">♟️</span>
+          <p>I'm a chess enthusiast, and I admire Magnus Carlsen's endgame technique and Paul Morphy's creativity.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__name">Suyu (Michael) Ye</p>
+      <ul class="footer__social" aria-label="Social links">
+        <li><a href="https://scholar.google.com/citations?user=WX4K5xQAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/suyu-ye/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>        <li><a href="https://x.com/suyu_ye" target="_blank" rel="noopener" aria-label="X"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+        <li><a href="mailto:sye10@jh.edu" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+      </ul>
     </div>
-  </div>
-</template>
+  </footer>
 
-  <template id="_loading-template">
-  <div class="loading nav-btn fr">
-    <span class="sr-only">Loading…</span>
-    <span class="icon-cog"></span>
-  </div>
-</template>
-
-  <template id="_error-template">
-  <div class="page">
-    <h1 class="page-title">Error</h1>
-    
-    
-    <p class="lead">
-      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
-
-    </p>
-  </div>
-</template>
-
-  <template id="_permalink-template">
-  <a href="#" class="permalink">
-    <span class="sr-only">Permalink</span>
-    <span class="content-hash"></span>
-  </a>
-</template>
-
-  
-    <template id="_dark-mode-template">
-  <button id="_dark-mode" class="nav-btn no-hover" >
-    <span class="sr-only">Dark Mode</span>
-    <span class="icon-brightness-contrast"></span>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
   </button>
-</template>
 
-  
-</div>
+  <!-- ===================== CITE MODAL ===================== -->
+  <div class="modal" id="citeModal" role="dialog" aria-modal="true" aria-labelledby="citeTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <div class="modal__head">
+        <h3 id="citeTitle" class="modal__title">BibTeX</h3>
+        <button class="icon-btn" type="button" data-close aria-label="Close">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <pre class="modal__code"><code id="citeCode"></code></pre>
+      <div class="modal__actions">
+        <button class="btn btn--primary" id="citeCopy" type="button">
+          <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy BibTeX</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

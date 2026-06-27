@@ -1,0 +1,195 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,left=1.2cm,right=1.2cm,top=1.6cm,bottom=1.6cm]{geometry}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{lastpage}
+
+\definecolor{jhublue}{RGB}{0, 45, 114}
+\definecolor{lightgray}{gray}{0.7}
+
+\newcommand{\sepspace}{\vspace{6pt}}
+\newcommand{\me}{\underline{Suyu Ye}}
+\newcommand{\eq}{$^*$}
+\newcommand{\lead}{$^\dagger$}
+
+\newcommand{\link}[2]{\textcolor{jhublue}{\href{#1}{\textbf{#2}}}}
+\newcommand{\paper}[6]{\item[#1]#3.~\textcolor{jhublue}{\href{#2}{#4.}}~In~\textit{#5}.~#6.}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Suyu Ye}
+\fancyfoot[R]{\footnotesize Last updated: \today. Page~\thepage~of~\pageref{LastPage}}
+
+\begin{document}
+% ============================== HEADER ==============================
+\begin{center}
+    \Large{\textbf{\textsc{Suyu (Michael) Ye}}}
+\end{center}
+
+\vspace{-18pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+    \faEnvelope~\textcolor{jhublue}{\href{mailto:sye10@jh.edu}{sye10@jh.edu}}\\
+    \faHome~\textcolor{jhublue}{\href{https://suyuye.com}{homepage}}\\
+    \faGoogle~\textcolor{jhublue}{\href{https://scholar.google.com/citations?user=WX4K5xQAAAAJ&hl=en}{google scholar}}\\
+    \faTwitter~\textcolor{jhublue}{\href{https://x.com/suyu_ye}{x.com/suyu\_ye}}\\
+    \faLinkedin~\textcolor{jhublue}{\href{https://www.linkedin.com/in/suyu-ye/}{linkedin.com/in/suyu-ye}}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+    \raggedleft
+    Department of Computer Science \\
+    Johns Hopkins University \\
+    Baltimore, MD \\
+    United States \\
+\end{minipage}
+
+% ========================== RESEARCH OVERVIEW ==========================
+\section*{Research Overview}
+My research is in embodied AI and robot learning: building agents that perceive, reason about, and act in the physical world, and that learn to collaborate with people. Topics I worked on in the past include:
+\begin{itemize}
+    \item[$\circ$] \textbf{\textcolor{jhublue}{Long-horizon, physically grounded agents.}}
+    \item[$\circ$] \textbf{\textcolor{jhublue}{Human-robot collaboration}}, including inferring human intent and grounding natural language into executable, physically grounded plans.
+    \item[$\circ$] \textbf{\textcolor{jhublue}{Multimodal theory of mind and social reasoning}} in multi-agent settings.
+    \item[$\circ$] \textbf{\textcolor{jhublue}{Generative world models}} for embodied belief inference, planning, and perception under occlusion.
+\end{itemize}
+
+% ============================== EDUCATION ==============================
+\sepspace
+\section*{Education}
+\begin{tabular}{p{4.1cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    \raggedleft \textbf{Ph.D.} & {Johns Hopkins University} \\
+    \raggedleft CS & Advisors: Tianmin Shu, Homanga Bharadwaj \\
+    \raggedleft 2026-2031~(exp.) & Incoming \\
+    & \\
+    \raggedleft \textbf{B.S.} & {Johns Hopkins University} \\
+    \raggedleft CS \& AMS & Advisor: Tianmin Shu \\
+    \raggedleft 2023-2026 & GPA: 3.94/4.0; Graduated with Honors \\
+\end{tabular}
+
+% ============================== EMPLOYMENT ==============================
+\sepspace
+\section*{Experience}
+\begin{tabular}{p{4.1cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    \raggedleft \textbf{Research Intern} & {Honda Research Institute} \\
+    \raggedleft May 2026-Present & ~ \\
+    & \\
+    \raggedleft \textbf{Undergraduate Researcher} & {Johns Hopkins University} \\
+    \raggedleft 2024-2026 & Social Cognitive AI Lab (SCAI)~~\textcolor{gray}{PI: Tianmin Shu} \\
+    & \\
+    \raggedleft \textbf{Course Assistant} & {Johns Hopkins University} \\
+    \raggedleft 2025 & Theory of Computation \\
+    & \\
+    \raggedleft \textbf{Military Service} & {Singapore Armed Forces} \\
+    \raggedleft 2021-2023 & ~ \\
+\end{tabular}
+
+% =========================== HONORS AND AWARDS ===========================
+\sepspace
+\section*{Honors and Awards}
+\begin{tabular}{p{14cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    CRA Outstanding Undergraduate Researcher Award, Honorable Mention & 2026 \\
+    Outstanding Senior Award, Johns Hopkins University & 2026 \\
+    National Merit Scholarship & 2023 \\
+\end{tabular}
+
+% =========================== PUBLICATIONS ===========================
+\sepspace
+\section*{Selected Publications}
+The~\eq~sign denotes equal contribution.
+
+\subsection*{Peer-Reviewed Papers}
+\begin{enumerate}
+\paper
+    {C3}
+    {https://openaccess.thecvf.com/content/CVPR2026F/papers/Chen_Fast_Generative_DeOcclusion_for_Visual_Geometry_and_Robotics_CVPRF_2026_paper.pdf}
+    {Jieneng Chen\eq, Tiezheng Zhang\eq, Xiwei Xuan, Ju He, Yifan Yin, Haojun Shi, \me, Xinyi Li, Ruisheng Yuan, Tianmin Shu, and Alan Yuille}
+    {Fast Generative DeOcclusion for Vision and Robotics}
+    {Computer Vision and Pattern Recognition (CVPR) Findings}
+    {2026}
+
+\paper
+    {C2}
+    {https://arxiv.org/abs/2504.10445}
+    {\me\eq, Haojun Shi\eq, Darren Shih, Hyokun Yun, Tanya Roosta, and Tianmin Shu}
+    {RealWebAssist: A Benchmark for Long-Horizon Web Assistance with Real-World Users}
+    {Association for the Advancement of Artificial Intelligence (AAAI)}
+    {2026}
+
+\paper
+    {C1}
+    {https://arxiv.org/abs/2408.12574}
+    {Haojun Shi\eq, \me\eq, Xinyu Fang, Chuanyang Jin, Leyla Isik, Yen-Ling Kuo, and Tianmin Shu}
+    {MuMA-ToM: Multi-modal Multi-Agent Theory of Mind}
+    {Association for the Advancement of Artificial Intelligence (AAAI) Oral}
+    {2025}
+
+\paper
+    {J1}
+    {https://biodatamining.biomedcentral.com/articles/10.1186/s13040-024-00390-0}
+    {Philip J. Freda, \me, Robert Zhang, Jason H. Moore, and Ryan J. Urbanowicz}
+    {Assessing the Limitations of Relief-Based Algorithms in Detecting Higher-Order Interactions}
+    {BioData Mining}
+    {2024}
+\end{enumerate}
+
+\subsection*{Preprints}
+\begin{enumerate}
+\paper
+    {P2}
+    {https://arxiv.org/abs/2605.11367}
+    {Yifan Yin\eq, Zehao Wen\eq, \me, Jieneng Chen, Zehan Zheng, Nanru Dai, Haojun Shi, Aydan Huang, Zheyuan Zhang, Alan Yuille, Jianwen Xie, Ayush Tewari, and Tianmin Shu}
+    {3D-Belief: Embodied Belief Inference via Generative 3D World Modeling}
+    {arXiv Preprint}
+    {2026}
+
+\paper
+    {P1}
+    {https://arxiv.org/abs/2602.19304}
+    {Haojun Shi\eq, \me\eq, Katherine M. Guerrerio, Jianzhi Shen, Yifan Yin, Daniel Khashabi, Chien-Ming Huang, and Tianmin Shu}
+    {Safe and Interpretable Multimodal Path Planning for Multi-Agent Cooperation}
+    {arXiv Preprint}
+    {2026}
+\end{enumerate}
+
+% ======================= WORKSHOP PRESENTATIONS =======================
+\sepspace
+\section*{Workshop Presentations}
+\begin{tabular}{p{14cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    MuMA-ToM~~\textcolor{gray}{NeurIPS Workshop on Behavioral ML (Poster)} & 2024 \\
+    MuMA-ToM~~\textcolor{gray}{NeurIPS Workshop on Video-Language Models (Poster)} & 2024 \\
+    RealWebAssist~~\textcolor{gray}{NeurIPS Workshop on Scaling Environments for Agents} & 2025 \\
+    RealWebAssist~~\textcolor{gray}{NeurIPS Workshop on Bridging Language, Agent and World Models (Spotlight)} & 2025 \\
+    RealWebAssist~~\textcolor{gray}{NeurIPS Workshop on Multi-Turn Interactions in LLMs} & 2025 \\
+\end{tabular}
+
+% ========================= PROFESSIONAL SERVICE =========================
+\sepspace
+\section*{Professional Service}
+\subsection*{Conference and Journal Refereeing}
+\begin{tabular}{p{14cm}@{\hspace{1em}}!{\textcolor{lightgray}{\vrule width 0.5pt}}@{\hspace{1em}}l}
+    Association for the Advancement of Artificial Intelligence (AAAI) & 2026 \\
+    Neural Information Processing Systems (NeurIPS) & 2026 \\
+    International Conference on Machine Learning (ICML) & 2026 \\
+    IEEE Robotics and Automation Letters (RA-L) & 2026 \\
+\end{tabular}
+
+\end{document}
