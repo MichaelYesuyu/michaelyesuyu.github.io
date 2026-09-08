@@ -1,6 +1,6 @@
 # suyuye.com
 
-Personal website of **Suyu (Michael) Ye** — CS Ph.D. student at Johns Hopkins University.
+Personal website of **Suyu (Michael) Ye** — first-year Ph.D. student in Computer Science at Johns Hopkins University.
 
 A hand-built static site (no framework, no build step) served by GitHub Pages at
 [suyuye.com](https://suyuye.com).
